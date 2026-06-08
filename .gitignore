@@ -9,6 +9,10 @@ test_results/
 # Node
 node_modules/
 
+# Excluded metadata
+force-app/main/default/pages/
+force-app/main/default/triggers/
+
 # OS
 .DS_Store
 Thumbs.db
