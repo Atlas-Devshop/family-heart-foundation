@@ -1,0 +1,14 @@
+# Salesforce DX generated/local files
+.sfdx/
+.sf/
+.vscode/
+
+# Test results
+test_results/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

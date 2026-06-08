@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Updates the Auto-Reminder Date to 2 weeks from the current date and the Auto-Close Date to 1 month from the current date when an Intake is updated to Awaiting Response.
+
+Updated by Atlas Devshop to use Custom Metadata Type instead of static value for auto close day.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>autoCloseDate</name>
+        <dataType>Date</dataType>
+        <expression>IF(NOT(ISNULL({!Get_Auto_Close_Days_Config.Number_of_days__c})),TODAY()+{!Get_Auto_Close_Days_Config.Number_of_days__c},ADDMONTHS(TODAY(),1))</expression>
+    </formulas>
+    <formulas>
+        <name>autoReminderDate</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()+14</expression>
+    </formulas>
+    <interviewLabel>Intake - RTF - Auto Close Date {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Intake - RTF - Auto Remind/Close Dates</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Auto_Close_Days_Config</name>
+        <label>Get Auto Close Days Config</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Intake</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>QualifiedApiName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Standard_Config</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Auto_Close_Days__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Intake</name>
+        <label>Update Intake</label>
+        <locationX>176</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>Auto_Close_Date__c</field>
+            <value>
+                <elementReference>autoCloseDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Auto_Reminder_Date__c</field>
+            <value>
+                <elementReference>autoReminderDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Auto_Close_Days_Config</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Awaiting Response</stringValue>
+            </value>
+        </filters>
+        <object>Intake__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

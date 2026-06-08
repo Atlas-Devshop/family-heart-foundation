@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Update this once deployed to production</description>
+        <name>Placeholder</name>
+        <label>Placeholder</label>
+        <locationX>176</locationX>
+        <locationY>252</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Schedule your FREE Care Navigation Consultation today.</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>&lt;p&gt;&lt;span style=&quot;font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-size: 12pt; color: rgb(20, 22, 23);&quot;&gt;We haven&apos;t forgotten about you!&amp;nbsp;Experts&amp;nbsp;from our&amp;nbsp;Care Navigation Center,&amp;nbsp;with&amp;nbsp;diverse backgrounds in clinical care, genetics, public health,&amp;nbsp;pediatric lipidology, and more,&amp;nbsp;are ready to answer all&amp;nbsp;of&amp;nbsp;your questions&amp;nbsp;and provide&amp;nbsp;individualized&amp;nbsp;resources&amp;nbsp;– at no cost to you.&lt;/span&gt;&lt;span style=&quot;font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-size: 12pt; color: rgb(34, 34, 34);&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: WordVisiCarriageReturn_MSFontService, Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif; font-size: 12pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-size: 12pt; color: rgb(255, 0, 0);&quot;&gt;Click&amp;nbsp;&lt;/strong&gt;&lt;a href=&quot;https://calendly.com/d/crwp-pk7-zjz/family-heart-care-navigation-meeting&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-size: 12pt; color: rgb(255, 0, 0);&quot;&gt;&lt;strong&gt;&lt;u&gt;HERE&lt;/u&gt;&lt;/strong&gt;&lt;/a&gt;&lt;strong style=&quot;font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-size: 12pt; color: rgb(255, 0, 0);&quot;&gt;&amp;nbsp;to&amp;nbsp;quickly&amp;nbsp;schedule&amp;nbsp;a&amp;nbsp;virtual&amp;nbsp;meeting&amp;nbsp;at a time that&amp;nbsp;is convenient for you.&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-size: 12pt; color: rgb(34, 34, 34);&quot;&gt;&amp;nbsp;Meetings are scheduled in&amp;nbsp;45-minute&amp;nbsp;increments.&amp;nbsp;You&amp;nbsp;will&amp;nbsp;receive&amp;nbsp;a&amp;nbsp;confirmation&amp;nbsp;email shortly.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: WordVisiCarriageReturn_MSFontService, Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif; font-size: 12pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-size: 12pt; color: rgb(34, 34, 34);&quot;&gt;IMPORTANT:&amp;nbsp;In&amp;nbsp;preparation&amp;nbsp;for the&amp;nbsp;call, please have available&amp;nbsp;your&amp;nbsp;lipid results&amp;nbsp;from&amp;nbsp;before&amp;nbsp;AND&amp;nbsp;after statin treatment&amp;nbsp;in addition to&amp;nbsp;your&amp;nbsp;lipoprotein(a) results,&amp;nbsp;if you have them. Please also have&amp;nbsp;on&amp;nbsp;hand results of any cardiac testing you may have had,&amp;nbsp;such as a calcium score, stress test, echo, carotid ultrasound, etc.&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-size: 12pt; color: rgb(34, 34, 34);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-size: 12pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-size: 14pt;&quot;&gt;&lt;img src=&quot;https://fonts.gstatic.com/s/e/notoemoji/16.0/2665/32.png&quot; alt=&quot;♥&quot;&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-size: 12pt;&quot;&gt;&amp;nbsp;The Family Heart Team&lt;/span&gt;&lt;span style=&quot;font-family: WordVisiCarriageReturn_MSFontService, Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-size: 12pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Runs daily at 9:30 AM to send the Care Navigation Auto-Reminder email alert</description>
+    <environments>Default</environments>
+    <interviewLabel>Intake {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Intake - Scheduled - Send Autoreminder</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Placeholder</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Send_Auto_Reminder__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Awaiting Response</stringValue>
+            </value>
+        </filters>
+        <object>Intake__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2025-04-12</startDate>
+            <startTime>09:30:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>InvalidDraft</status>
+</Flow>
